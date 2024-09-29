@@ -7,7 +7,7 @@ const todoStore = useTodoStore()
 </script>
 
 <template>
-    <div>
+    <div v-if="todoStore.todos.length > 0">
         <ul>
             <TodoItem
                 v-for="(todo, i) of todoStore.todos"
@@ -16,8 +16,19 @@ const todoStore = useTodoStore()
                 />
         </ul>
     </div>
+    <div v-else>
+        <h3>The To-Do list is empty. Add an To-Do</h3>
+    </div>
 </template>
 
 <style scoped>
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
+h3 {
+    text-align: center;
+}
 </style>

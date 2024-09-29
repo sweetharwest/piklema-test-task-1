@@ -1,5 +1,21 @@
 # Vue 3 + TypeScript + Vite
+Задание 1
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Простой To-Do список с сохранением данных Задача:					 							
+Создать To-Do список с возможностью добавления, редактирования и удаления задач.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Реализовать возможность сохранять задачи в localStorage, чтобы они оставались при перезагрузке страницы.
+
+Добавить индикацию завершенной задачи (например, зачеркивание текста или изменение стиля).
+
+Как выполнять? Писать на Vue 3 (Composition API). Плюсом будет использование Vite для сборки, TS с типизацией и Pinia.
+В качестве ответа прислать ссылку на GitHub/GitLab
+
+Используемые технологии:  
+    - Язык: TypeScript  
+    - Фреймворк: Vue 3 (Composition API)  
+    - Сборщик: Vite  
+    - Pinia  
+    - localStorage  
+
+![demo](demo/demo.gif)

@@ -3,16 +3,17 @@ import {ref, watch} from "vue";
 import {ITodo} from "../interfaces/interfaces.ts";
 
 export const useTodoStore = defineStore('todoStore', () => {
-    const todos = ref<ITodo[]>([
+    /*const todos = ref<ITodo[]>([
         { id: 1, title: 'Buy groceries', completed: false },
         { id: 2, title: 'Finish project', completed: true },
         { id: 3, title: 'Walk the dog', completed: false }
-    ])
+    ])*/
+    const todos = ref<ITodo[]>([])
 
-/*    const todosInLocalStorage = localStorage.getItem("todos")
+    const todosInLocalStorage = localStorage.getItem("todos")
     if (todosInLocalStorage) {
-        todos.value = JSON.parse(todosInLocalStorage)._value;
-    }*/
+        todos.value = JSON.parse(todosInLocalStorage);
+    }
 
     const addTodo = (title: string): void => {
         todos.value.push({ id: Date.now(), title: title, completed: false })
@@ -24,7 +25,6 @@ export const useTodoStore = defineStore('todoStore', () => {
     }
 
     const deleteTodo = (id: number): void => {
-        debugger
         todos.value = todos.value.filter((el) => el.id !== id)
     }
 
@@ -33,13 +33,13 @@ export const useTodoStore = defineStore('todoStore', () => {
         todos.value[idx].title = title
     }
 
-/*    watch(
+    watch(
         () => todos.value,
-        (state: any[]) => {
+        (state: ITodo[]) => {
             localStorage.setItem("todos", JSON.stringify(state));
         },
         { deep: true }
-    );*/
+    );
 
     return {
         todos, toggleCompleted, deleteTodo, setTitle, addTodo
